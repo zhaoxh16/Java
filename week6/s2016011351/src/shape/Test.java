@@ -1,0 +1,21 @@
+package shape;
+
+public class Test {
+	public static void main(String args[]){
+		Shape a = new Rectangle(2,3);
+		System.out.println(a.getArea());
+		Shape b = new Circle(5);
+		System.out.println(b.getArea());
+		Shape[] array = new Shape[2];
+		array[0] = new Rectangle(1,4);
+		array[1] = new Circle(3);
+		System.out.println(array[0].getArea());
+		System.out.println(array[1].getArea());
+		showArea(a);
+		showArea(b);
+	}
+	
+	public static void showArea(Shape myShape){
+		System.out.println(myShape.getArea());
+	}
+}

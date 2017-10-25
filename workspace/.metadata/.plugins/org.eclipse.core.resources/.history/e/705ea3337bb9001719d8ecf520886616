@@ -1,0 +1,6 @@
+package shape;
+
+public class Shape {
+	protected double area = 0;
+	public abstract double getArea();
+}
