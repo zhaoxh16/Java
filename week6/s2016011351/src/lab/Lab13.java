@@ -32,10 +32,20 @@ public class Lab13 {
       * is not an int, then issue a message (System.out.println(...) and prompts
       * again.
       */
-    public static int readKeyboardInt() throws IOException,NumberFormatException {
+    public static int readKeyboardInt(){
         BufferedReader kyboard= getKeyboard();
-        String line = readKeyboardLine();
-        int myInt = Integer.parseInt(line);
+        int myInt = 0;
+        while(true) {
+        	try {
+                String line = readKeyboardLine();
+                myInt = Integer.parseInt(line);
+                break;
+        	}catch(IOException e) {
+        		System.out.println("读取错误，请重新输入");
+        	}catch(NumberFormatException e) {
+        		System.out.println("输入的不是整数，请重新输入");
+        	}
+        }
         return myInt;
     }
     
